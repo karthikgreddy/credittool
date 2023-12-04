@@ -46,5 +46,11 @@ public class mainpg extends JFrame {
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel.setBounds(29, 25, 251, 37);
 		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Check Your Credit Score :");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel_1.setBounds(484, 325, 251, 37);
+		contentPane.add(lblNewLabel_1);
 	}
 }
