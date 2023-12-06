@@ -3,6 +3,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -10,6 +15,9 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 
@@ -17,24 +25,26 @@ public class mainpg extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTable table;
+	private JTable datagrid;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+	
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					mainpg frame = new mainpg();
 					frame.setVisible(true);
+		
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
 	}
-
 	/**
 	 * Create the frame.
 	 */
@@ -58,7 +68,29 @@ public class mainpg extends JFrame {
 		btnUpload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser jf = new JFileChooser();
-				int result = jf.showOpenDialog(null);
+				int returnValue = jf.showOpenDialog(null);
+				if(returnValue == JFileChooser.APPROVE_OPTION) {
+					try {
+						XSSFWorkbook work = new XSSFWorkbook(new FileInputStream(jf.getSelectedFile()));
+						
+						XSSFSheet sheet = work.getSheetAt(0);
+						XSSFRow row = null;
+						
+						int i=0; double j;
+						while((row = sheet.getRow(i))!=null) {
+							j= row.getCell(1).getNumericCellValue();
+							System.out.println("Cust Name :: "+row.getCell(0).getStringCellValue());
+							System.out.println("Cust Id :: "+row.getCell(1).getNumericCellValue());
+							System.out.println("Cust Add :: "+row.getCell(2).getNumericCellValue());
+							System.out.println("total"+j);
+							i++;
+						}
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+				}
 			}
 		});
 		btnUpload.setForeground(Color.WHITE);
@@ -67,9 +99,9 @@ public class mainpg extends JFrame {
 		btnUpload.setBounds(66, 603, 225, 41);
 		contentPane.add(btnUpload);
 		
-		table = new JTable();
-		table.setBackground(new Color(46, 48, 79));
-		table.setBounds(66, 109, 1214, 456);
-		contentPane.add(table);
+		datagrid = new JTable();
+		datagrid.setBackground(new Color(46, 48, 79));
+		datagrid.setBounds(66, 109, 1214, 456);
+		contentPane.add(datagrid);
 	}
 }
