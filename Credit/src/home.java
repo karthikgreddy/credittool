@@ -119,7 +119,7 @@ public class home extends JFrame {
 					String sql ="select * from CRED where username='"+t1+"' and password='"+t2+"'";
 					ResultSet rs = statement.executeQuery(sql);
 					if(rs.next()) {
-						mainpg frame = new mainpg();
+						mainpg frame = new mainpg(null, null, null, null, null, null);
 						frame.setVisible(true);
 						JOptionPane.showMessageDialog(frame, "Your Details are Valid.");
 						dispose();
@@ -209,9 +209,8 @@ public class home extends JFrame {
 					Statement statement = connection.createStatement();
 					String sql ="insert into CRED values ('" + t11 + "','" + t12 + "')";
 					statement.executeUpdate(sql);
-					register frame = new register();
-					frame.setVisible(true);
-						JOptionPane.showMessageDialog(frame, "Your Details have been registered.");
+					new register(t11).setVisible(true);
+						JOptionPane.showMessageDialog(null, "Your Details have been registered.");
 						dispose();
 					} 
 				 catch (SQLException e1) {

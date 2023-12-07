@@ -36,7 +36,7 @@ public class mainpg extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					mainpg frame = new mainpg();
+					mainpg frame = new mainpg(null, null, null, null, null, null);
 					frame.setVisible(true);
 		
 				} catch (Exception e) {
@@ -47,8 +47,14 @@ public class mainpg extends JFrame {
 	}
 	/**
 	 * Create the frame.
+	 * @param t6 
+	 * @param t5 
+	 * @param t4 
+	 * @param t3 
+	 * @param t2 
+	 * @param t1 
 	 */
-	public mainpg() {
+	public mainpg(String t1, String t2, String t3, String t4, String t5, String t6) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1367, 730);
 		contentPane = new JPanel();
@@ -103,5 +109,42 @@ public class mainpg extends JFrame {
 		datagrid.setBackground(new Color(46, 48, 79));
 		datagrid.setBounds(66, 109, 1214, 456);
 		contentPane.add(datagrid);
+		
+		JLabel f1 = new JLabel(t1);
+		f1.setForeground(new Color(255, 255, 255));
+		f1.setBackground(new Color(46, 41, 79));
+		f1.setBounds(66, 78, 77, 21);
+		contentPane.add(f1);
+		
+		JLabel f2 = new JLabel(t2);
+		f2.setForeground(Color.WHITE);
+		f2.setBackground(new Color(46, 41, 79));
+		f2.setBounds(153, 78, 77, 21);
+		contentPane.add(f2);
+		
+		JLabel f3 = new JLabel(t3);
+		f3.setForeground(Color.WHITE);
+		f3.setBackground(new Color(46, 41, 79));
+		f3.setBounds(240, 78, 77, 21);
+		contentPane.add(f3);
+		
+		JLabel f4 = new JLabel(t4);
+		f4.setForeground(Color.WHITE);
+		f4.setBackground(new Color(46, 41, 79));
+		f4.setBounds(327, 78, 77, 21);
+		contentPane.add(f4);
+		
+		JLabel f5 = new JLabel(t5);
+		f5.setForeground(Color.WHITE);
+		f5.setBackground(new Color(46, 41, 79));
+		f5.setBounds(414, 78, 77, 21);
+		contentPane.add(f5);
+		
+		JLabel f6 = new JLabel(t6);
+		f6.setForeground(Color.WHITE);
+		f6.setBackground(new Color(46, 41, 79));
+		f6.setBounds(501, 78, 77, 21);
+		contentPane.add(f6);
 	}
+	
 }

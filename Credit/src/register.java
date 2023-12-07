@@ -36,7 +36,7 @@ public class register extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					register frame = new register();
+					register frame = new register(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,8 +47,9 @@ public class register extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param t11 
 	 */
-	public register() {
+	public register(String t11) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1227, 732);
 		contentPane = new JPanel();
@@ -176,9 +177,8 @@ public class register extends JFrame {
 					Statement statement = connection.createStatement();
 					String sql ="insert into REG values ('" + t1 + "','" + t2 + "','"+t3+"','"+t4+"','"+t5+"','"+t6+"')";
 					statement.executeUpdate(sql);
-					mainpg frame = new mainpg();
-					frame.setVisible(true);
-						JOptionPane.showMessageDialog(frame, "Your Details have been Saved");
+					new mainpg(t1,t2,t3,t4,t5,t6).setVisible(true);
+						JOptionPane.showMessageDialog(null, "Your Details have been Saved");
 						dispose();
 					} 
 				 catch (SQLException e1) {
