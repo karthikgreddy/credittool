@@ -1,7 +1,7 @@
-import java.awt.BorderLayout;
+//mport java.awt.BorderLayout;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+//import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 //import java.sql.Statement;
@@ -12,7 +12,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
+//import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.UIManager;
 import javax.swing.JTextField;
