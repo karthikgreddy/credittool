@@ -119,9 +119,8 @@ public class home extends JFrame {
 					String sql ="select * from CRED where username='"+t1+"' and password='"+t2+"'";
 					ResultSet rs = statement.executeQuery(sql);
 					if(rs.next()) {
-						mainpg frame = new mainpg(null, null, null, null, null, null);
-						frame.setVisible(true);
-						JOptionPane.showMessageDialog(frame, "Your Details are Valid.");
+						new register(null).setVisible(true);
+						JOptionPane.showMessageDialog(null, "Your Details have been registered.");
 						dispose();
 					}
 					else {

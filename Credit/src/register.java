@@ -173,7 +173,7 @@ public class register extends JFrame {
 				t1= f1.getText();t2= f2.getText();t3= f3.getText();t4= f4.getText();t5= f5.getText();t6=f6.getText();
 				try {
 					Connection connection = DriverManager.getConnection(databaseURL);
-					System.out.println("Connected to DataBase");
+					System.out.println("Connected to DataBase2");
 					Statement statement = connection.createStatement();
 					String sql ="insert into REG values ('" + t1 + "','" + t2 + "','"+t3+"','"+t4+"','"+t5+"','"+t6+"')";
 					statement.executeUpdate(sql);
