@@ -169,9 +169,9 @@ public class mainpg extends JFrame {
 		});
 		
 			
-		btnUpload.setForeground(Color.WHITE);
+		btnUpload.setForeground(new Color(0, 0, 0));
 		btnUpload.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnUpload.setBackground(new Color(46, 41, 79));
+		btnUpload.setBackground(new Color(255, 255, 255));
 		btnUpload.setBounds(66, 603, 251, 41);
 		contentPane.add(btnUpload);
 		

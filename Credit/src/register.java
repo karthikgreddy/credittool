@@ -53,6 +53,7 @@ public class register extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1227, 732);
 		contentPane = new JPanel();
+		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBackground(new Color(46, 51, 73));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -190,9 +191,9 @@ public class register extends JFrame {
 				
 			}
 		});
-		btnNewButton.setBackground(new Color(46, 51, 73));
+		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setForeground(new Color(0, 0, 0));
 		btnNewButton.setBounds(409, 526, 225, 41);
 		contentPane.add(btnNewButton);
 	}
