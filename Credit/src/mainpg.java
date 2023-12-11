@@ -108,7 +108,7 @@ public class mainpg extends JFrame {
 						int i=1; 
 						while((row = sheet.getRow(i))!=null) {														
 							i++;
-							
+														
 							i1=row.getCell(1).getNumericCellValue();
 							i2=row.getCell(2).getNumericCellValue();
 							i3=row.getCell(3).getNumericCellValue();
